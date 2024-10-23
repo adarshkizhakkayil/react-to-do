@@ -9,11 +9,7 @@ export const TodoWrapper = () => {
   const [todos, setTodos] = useState([]);
 
   const addTodo = (todo) => {
-    const trimmedTodo = todo.trim();
-    if (todos.some((t) => t.task.toLowerCase() === trimmedTodo.toLowerCase())) {
-        alert('This task already exists!');
-        return;
-    }    
+   
     setTodos([
       ...todos,
       { id: uuidv4(), task: todo, completed: false, isEditing: false },
